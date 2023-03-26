@@ -8,6 +8,10 @@
   <%= form.submit 'Submit form', class: 'p-2 mt-5 bg-gray-300' %>
 <% end %>
 
-<%= turbo_frame_tag 'page4', class: 'block bg-green-100 mt-10 p-5' do %>
+<%= turbo_frame_tag 'page4-image', class: 'block bg-green-100 mt-10 p-5' do %>
   <%= link_to 'Load image', page4_path %>
+<% end %>
+
+<%= turbo_frame_tag 'page4-text', class: 'block bg-blue-100 mt-10 p-5' do %>
+  <%= link_to 'Load text', page4_path %>
 <% end %>
