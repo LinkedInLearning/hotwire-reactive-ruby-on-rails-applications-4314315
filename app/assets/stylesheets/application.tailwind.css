@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  h1 {
+    @apply text-2xl font-bold pb-5;
+  }
+
+  p {
+    @apply pb-3;
+  }
+
+  a {
+    @apply text-blue-700;
+  }
+}
