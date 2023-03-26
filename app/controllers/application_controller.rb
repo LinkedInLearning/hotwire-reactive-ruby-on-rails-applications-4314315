@@ -6,4 +6,6 @@ class ApplicationController < ActionController::Base
   def page3
     redirect_to page2_path, status: :see_other
   end
+
+  def page4; end
 end
