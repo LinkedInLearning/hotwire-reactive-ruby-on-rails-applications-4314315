@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def page4; end
+
+  def programming_languages
+    @programming_languages = ProgrammingLanguage.all.reverse_order
+  end
 end
