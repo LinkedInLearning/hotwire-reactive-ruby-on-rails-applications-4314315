@@ -2,8 +2,8 @@
 
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus similique quisquam, reiciendis eius corporis quibusdam unde dolorem maxime, non optio! Voluptates placeat distinctio nemo vel consequuntur blanditiis fugiat dignissimos!</p>
 
-<%= link_to 'Go to page 2 >', page2_path, data: { turbo: false } %>
+<%= link_to 'Go to page 2 >', page2_path %>
 
-<%= form_with url: page3_path, data: { turbo: false } do |form| %>
+<%= form_with url: page3_path do |form| %>
   <%= form.submit 'Submit form', class: 'p-2 mt-5 bg-gray-300' %>
 <% end %>
