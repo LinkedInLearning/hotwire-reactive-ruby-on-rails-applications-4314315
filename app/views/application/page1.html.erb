@@ -8,10 +8,12 @@
   <%= form.submit 'Submit form', class: 'p-2 mt-5 bg-gray-300' %>
 <% end %>
 
-<%= turbo_frame_tag 'page4-image', class: 'block bg-green-100 mt-10 p-5' do %>
-  <%= link_to 'Load image', page4_path %>
+<%= turbo_frame_tag 'page4-image-link', class: 'block bg-green-100 mt-10 p-5' do %>
+  <%= link_to 'Load image', page4_path, data: { turbo_frame: 'page4-image-response' } %>
 <% end %>
 
 <%= turbo_frame_tag 'page4-text', class: 'block bg-blue-100 mt-10 p-5' do %>
-  <%= link_to 'Load text', page4_path %>
+  <%= link_to 'Load text', page4_path, target: '_top' %>
 <% end %>
+
+<%= turbo_frame_tag 'page4-image-response', class: 'block bg-yellow-100 mt-5 p-5' %>
