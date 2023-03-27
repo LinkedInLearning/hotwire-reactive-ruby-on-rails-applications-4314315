@@ -20,5 +20,7 @@ class ApplicationController < ActionController::Base
     @programming_language.save!
 
     @counter = ProgrammingLanguage.count
+
+    @programming_language.broadcast_render_to :stream_test, partial: 'application/create_programming_language', locals: { counter: ProgrammingLanguage.count }
   end
 end
