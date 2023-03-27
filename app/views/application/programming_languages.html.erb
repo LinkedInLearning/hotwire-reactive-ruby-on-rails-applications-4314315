@@ -1,5 +1,7 @@
 <h1>Programming languages</h1>
 
+<h2 class="text-xl py-3">Total: <span class="counter"><%= @programming_languages.count %></span></h2>
+
 <table>
   <thead>
     <th class="border p-2 text-center">Name</th>
@@ -9,6 +11,8 @@
     <%= render @programming_languages %>
   </tbody>
 </table>
+
+<p class="pt-3 text-sm">There are <span class="counter"><%= @programming_languages.count %></span> programming languages.</p>
 
 <h2 class="text-xl mt-10">Add a new language</h2>
 

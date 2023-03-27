@@ -18,5 +18,7 @@ class ApplicationController < ActionController::Base
     @programming_language = ProgrammingLanguage.new params.require(:programming_language).permit(:name, :release_date)
 
     @programming_language.save!
+
+    @counter = ProgrammingLanguage.count
   end
 end

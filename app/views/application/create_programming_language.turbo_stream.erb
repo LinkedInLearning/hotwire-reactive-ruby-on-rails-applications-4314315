@@ -1,3 +1,7 @@
 <%= turbo_stream.prepend 'languages-list' do %>
   <%= render @programming_language %>
 <% end %>
+
+<%= turbo_stream.update_all '.counter' do %>
+  <%= @counter %>
+<% end %>
