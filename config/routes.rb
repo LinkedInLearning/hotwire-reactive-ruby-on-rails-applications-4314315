@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'page4', to: 'application#page4'
 
   get 'programming-languages', to: 'application#programming_languages'
+  post 'programming-language', to: 'application#create_programming_language'
 end

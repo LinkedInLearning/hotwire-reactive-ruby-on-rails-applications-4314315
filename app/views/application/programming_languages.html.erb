@@ -5,7 +5,23 @@
     <th class="border p-2 text-center">Name</th>
     <th class="border p-2 text-center">Release date</th>
   </thead>
-  <tbody>
+  <tbody id="languages-list">
     <%= render @programming_languages %>
   </tbody>
 </table>
+
+<h2 class="text-xl mt-10">Add a new language</h2>
+
+<%= form_with model: @programming_language, url: programming_language_path do |form| %>
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :release_date %>
+    <%= form.text_field :release_date %>
+  </div>
+
+  <%= form.submit 'Add', class: 'border border-black p-2 cursor-pointer' %>
+<% end %>

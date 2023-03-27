@@ -11,5 +11,12 @@ class ApplicationController < ActionController::Base
 
   def programming_languages
     @programming_languages = ProgrammingLanguage.all.reverse_order
+    @programming_language = ProgrammingLanguage.new
+  end
+
+  def create_programming_language
+    @programming_language = ProgrammingLanguage.new params.require(:programming_language).permit(:name, :release_date)
+
+    @programming_language.save!
   end
 end
