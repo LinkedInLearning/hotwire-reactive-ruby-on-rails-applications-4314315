@@ -1,0 +1,7 @@
+<%= turbo_stream.prepend 'tasks' do %>
+  <%= render 'task', task: @task %>
+<% end %>
+
+<%= turbo_stream.replace 'new_task_form' do %>
+  <%= render 'form', task: Task.new %>
+<% end %>
