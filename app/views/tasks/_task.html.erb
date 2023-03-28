@@ -1,7 +1,27 @@
 <li id="<%= "#{dom_id(task)}_li" %>">
   <%= turbo_frame_tag dom_id(task) do %>
-    <div class="flex items-center gap-x-2 group">
-      <%= link_to task.name, edit_task_path(task) %>
+    <div class="flex items-center gap-x-2 group"
+         data-controller="task">
+      <% if task.done? %>
+        <%= form_with url: task_path(task), method: :patch do %>
+          <input type="hidden" name="task[status]" value="todo">
+          <input type="checkbox"
+                 class="cursor-pointer focus:ring-0"
+                 data-task-target="checkbox"
+                 data-action="task#toggle"
+                 checked>
+        <% end %>
+      <% else %>
+        <%= form_with url: task_path(task), method: :patch do %>
+          <input type="hidden" name="task[status]" value="done">
+          <input type="checkbox"
+                 class="cursor-pointer focus:ring-0"
+                 data-task-target="checkbox"
+                 data-action="task#toggle">
+        <% end %>
+      <% end %>
+
+      <%= link_to task.name, edit_task_path(task), class: task.done? ? 'line-through' : '' %>
 
       <%= button_to task_path(task), method: :delete, class: 'hidden group-hover:block' do %>
         <span class="text-red-500 font-bold p-1">x</span>
