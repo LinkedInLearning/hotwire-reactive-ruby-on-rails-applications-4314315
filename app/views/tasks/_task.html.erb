@@ -1,1 +1,5 @@
-<li><%= task.name %></li>
+<li id="<%= "#{dom_id(task)}_li" %>">
+  <%= turbo_frame_tag dom_id(task) do %>
+    <%= link_to task.name, edit_task_path(task) %>
+  <% end %>
+</li>
