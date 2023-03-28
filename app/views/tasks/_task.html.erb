@@ -1,5 +1,11 @@
 <li id="<%= "#{dom_id(task)}_li" %>">
   <%= turbo_frame_tag dom_id(task) do %>
-    <%= link_to task.name, edit_task_path(task) %>
+    <div class="flex items-center gap-x-2 group">
+      <%= link_to task.name, edit_task_path(task) %>
+
+      <%= button_to task_path(task), method: :delete, class: 'hidden group-hover:block' do %>
+        <span class="text-red-500 font-bold p-1">x</span>
+      <% end %>
+    </div>
   <% end %>
 </li>

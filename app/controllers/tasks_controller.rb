@@ -50,7 +50,11 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   def destroy
     @task.destroy
-    redirect_to tasks_url, notice: "Task was successfully destroyed."
+
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.remove("#{helpers.dom_id(@task)}_li") }
+      format.html { redirect_to tasks_url, notice: "Task was successfully destroyed." }
+    end
   end
 
   private
