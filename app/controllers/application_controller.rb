@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
-  def page1; end
+  def page1
+    @success_message = 'The color has been changed'
+    @reset_message = 'The color has been reset'
+  end
 
   def page2; end
 
