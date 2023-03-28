@@ -6,6 +6,12 @@
   </div>
 
   <ul class="space-y-3" id="tasks">
-    <%= render @tasks %>
+    <%= render @todo_tasks %>
+  </ul>
+
+  <h3 class="text-xl mt-8 mb-2">Done</h3>
+
+  <ul class="space-y-3" id="done-tasks">
+    <%= render @done_tasks %>
   </ul>
 </div>

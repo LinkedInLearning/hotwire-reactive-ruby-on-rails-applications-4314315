@@ -3,7 +3,8 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    @tasks = Task.all.reverse_order
+    @todo_tasks = Task.todo
+    @done_tasks = Task.done
   end
 
   # GET /tasks/1
