@@ -7,7 +7,8 @@ export default class extends Controller {
   connect() {
   }
 
-  inputTargetConnected() {
-    this.cardTarget.style = 'background-color: red';
+  colorizeCard() {
+    this.cardTarget.classList.remove('bg-white');
+    this.cardTarget.style = `background-color: ${this.inputTarget.value}`;
   }
 }
